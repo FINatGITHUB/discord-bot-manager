@@ -4,6 +4,15 @@
 
 A full-stack web application for managing Discord bots with real-time monitoring, server management, command configuration, and activity tracking. Built with React frontend and Express backend, integrating with Discord.js for bot operations.
 
+## Deployment Status
+
+✅ **Application Complete & Ready for Deployment**
+
+- Deploy to Railway, Fly.io, or Heroku using instructions in `DEPLOYMENT.md`
+- Requires: `DISCORD_BOT_TOKEN` environment variable
+- Fully responsive, production-ready UI with dark/light mode
+- All features functional: dashboard, servers, commands, activity log, settings
+
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
