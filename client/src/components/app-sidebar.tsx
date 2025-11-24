@@ -58,9 +58,6 @@ export function AppSidebar() {
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2">
               <h2 className="text-sm font-semibold truncate">Discord Bot</h2>
-              <Badge variant="outline" className="bg-status-away/10 text-status-away border-status-away/20 text-xs px-1.5 py-0">
-                Demo
-              </Badge>
             </div>
             <p className="text-xs text-muted-foreground truncate">Management Dashboard</p>
           </div>
