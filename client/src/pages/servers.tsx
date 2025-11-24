@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Users, Settings as SettingsIcon, ExternalLink } from "lucide-react";
+import { Users, Settings as SettingsIcon, ExternalLink, Server as ServerIcon } from "lucide-react";
 import type { Server } from "@shared/schema";
 
 function ServerCard({ server }: { server: Server }) {
@@ -108,7 +108,7 @@ export default function Servers() {
       ) : (
         <Card className="p-12">
           <div className="text-center space-y-3">
-            <Server className="w-12 h-12 mx-auto text-muted-foreground/50" />
+            <ServerIcon className="w-12 h-12 mx-auto text-muted-foreground/50" />
             <div>
               <h3 className="font-medium">No servers found</h3>
               <p className="text-sm text-muted-foreground mt-1">

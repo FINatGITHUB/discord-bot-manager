@@ -36,7 +36,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
       await storage.setBotStatus(botStatus);
 
-      const servers: DiscordServer[] = client.guilds.cache.map((guild) => ({
+      const servers: DiscordServer[] = Array.from(client.guilds.cache.values()).map((guild) => ({
         id: guild.id,
         name: guild.name,
         icon: guild.icon ? `https://cdn.discordapp.com/icons/${guild.id}/${guild.icon}.png` : null,
@@ -47,13 +47,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
       await storage.setServers(servers);
 
-      for (const guild of client.guilds.cache.values()) {
-        const channels: Channel[] = guild.channels.cache
-          .filter((ch) => ch.type === ChannelType.GuildText || 
+      for (const guild of Array.from(client.guilds.cache.values())) {
+        const channels: Channel[] = Array.from(guild.channels.cache.values())
+          .filter((ch: any) => ch.type === ChannelType.GuildText || 
                          ch.type === ChannelType.GuildVoice ||
                          ch.type === ChannelType.GuildCategory ||
                          ch.type === ChannelType.GuildAnnouncement)
-          .map((ch) => {
+          .map((ch: any) => {
             const channelTypeMap: { [key: number]: "text" | "voice" | "category" | "announcement" } = {
               [ChannelType.GuildText]: "text",
               [ChannelType.GuildVoice]: "voice",
